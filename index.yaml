@@ -8,7 +8,7 @@ entries:
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
     keywords:
     - cobrowse
-    kubeVersion: '>=1.18.0-0 < 1.19.0-0'
+    kubeVersion: '>=1.18.0-0'
     maintainers:
     - email: hello@cobrowse.io
       name: Cobrowse.io
