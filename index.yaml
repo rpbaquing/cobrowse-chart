@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   cobrowse:
   - apiVersion: v1
-    created: "2021-05-06T00:07:53.79744+08:00"
+    created: "2021-05-06T00:19:42.458255+08:00"
     description: Chart for the Cobrowse Platform
-    digest: 4ed340939b31e79d99a05b0110b525ad046c5168710aae1fd48f35a940a7b5fa
+    digest: 3c1f61d1c63733945c2027e7b99ff480f3e7d299fa6b87e3c7d34dfe43972f95
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
     keywords:
     - cobrowse
@@ -16,4 +16,4 @@ entries:
     urls:
     - https://rpbaquing.github.io/cobrowse-chart/cobrowse-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-06T00:07:53.787369+08:00"
+generated: "2021-05-06T00:19:42.441472+08:00"
