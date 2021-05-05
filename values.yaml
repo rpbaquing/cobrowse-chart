@@ -85,6 +85,6 @@ sockets:
     type: "ClusterIP"
   
   storage: 
-    size: "100Gi" # 50Gi - should be lower than NFS provisioner storage size
+    size: "50Gi" # should be lower than NFS provisioner storage size
     className: "nfs" 
   mountPath: "/data/traces"
