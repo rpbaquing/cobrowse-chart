@@ -3,9 +3,9 @@ entries:
   cobrowse-enterprise:
   - apiVersion: v1
     appVersion: v1.4.3
-    created: "2021-05-06T22:39:42.337616+08:00"
+    created: "2021-05-06T22:55:57.530692+08:00"
     description: Chart for the Cobrowse Platform
-    digest: 172ab5438d5f02d6965c11d86fa71e13c11e9863b6693517dd1b49ac44375e18
+    digest: 2e3246b1dfd9d017dab216c3115e0220132db425f594f0c85c6872afc8299761
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
     keywords:
     - cobrowse-enterprise
@@ -15,6 +15,6 @@ entries:
       name: Cobrowse.io
     name: cobrowse-enterprise
     urls:
-    - cobrowse-enterprise-1.0.0.tgz
-    version: 1.0.0
-generated: "2021-05-06T22:39:42.334085+08:00"
+    - cobrowse-enterprise-1.0.1.tgz
+    version: 1.0.1
+generated: "2021-05-06T22:55:57.529201+08:00"
