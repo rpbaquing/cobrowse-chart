@@ -43,20 +43,32 @@ spec:
       - backend:
           serviceName: {{ .Release.Name }}-api-svc
           servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
         path: "/api/"
-        pathType: Prefix
+{{- else }}
+        path: "/api/*"
+{{- end }}
       - backend:
           serviceName: {{ .Release.Name }}-recording-svc
           servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
         path: "/recording/"
-        pathType: Prefix
+{{- else }}
+        path: "/recording/*"
+{{- end }}
       - backend:
           serviceName: {{ .Release.Name }}-proxy-svc
           servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
         path: "/proxy/"
-        pathType: Prefix
+{{- else }}
+        path: "/proxy/*"
+{{- end }}
       - backend:
           serviceName: {{ .Release.Name }}-sockets-svc
           servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
         path: "/sockets/"
-        pathType: Prefix
+{{- else }}
+        path: "/sockets/*"
+{{- end }}
