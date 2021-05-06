@@ -28,7 +28,7 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-frontend-envvars
-        image: {{ .Values.frontend.image }} 
+        image: {{ printf "ghcr.io/cobrowseio/cobrowse-frontend-enterprise:%s" .Values.frontend.imageTag | quote }}
         livenessProbe:
           failureThreshold: 3
           initialDelaySeconds: 30

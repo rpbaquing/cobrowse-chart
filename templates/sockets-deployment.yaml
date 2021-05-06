@@ -27,8 +27,8 @@ spec:
       containers:
       - envFrom:
         - secretRef:
-            name: {{ .Release.Name }}-proxy-envvars
-        image: {{ .Values.proxy.image }} 
+            name: {{ .Release.Name }}-sockets-envvars
+        image: {{ printf "ghcr.io/cobrowseio/cobrowse-api-sockets-enterprise:%s" .Values.sockets.imageTag | quote }}
         livenessProbe:
           failureThreshold: 3
           httpGet:
