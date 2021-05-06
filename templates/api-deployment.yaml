@@ -28,7 +28,7 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-api-envvars
-        image: {{ printf "ghcr.io/cobrowseio/cobrowse-api-enterprise:%s" .Values.api.imageTag | quote }}
+        image: {{ printf "ghcr.io/cobrowseio/cobrowse-api-enterprise:%s" .Values.api.imageTag }}
         livenessProbe:
           failureThreshold: 3
           httpGet:
