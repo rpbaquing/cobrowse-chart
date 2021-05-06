@@ -35,11 +35,11 @@ spec:
           periodSeconds: 30
           successThreshold: 1
           tcpSocket:
-            port: {{ int .Values.frontend.port }}
+            port: 8080
           timeoutSeconds: 1
         name: frontend
         ports:
-        - containerPort: {{ int .Values.frontend.port }}
+        - containerPort: 8080
           name: http
           protocol: TCP
         readinessProbe:
@@ -48,7 +48,7 @@ spec:
           periodSeconds: 30
           successThreshold: 1
           tcpSocket:
-            port: {{ int .Values.frontend.port }}
+            port: 8080
           timeoutSeconds: 1
         resources:
           limits:

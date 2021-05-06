@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
@@ -42,21 +42,21 @@ spec:
       paths:
       - backend:
           serviceName: {{ .Release.Name }}-api-svc
-          servicePort: {{ int .Values.api.port }}
-        path: "/api"
+          servicePort: 8080
+        path: "/api/"
         pathType: Prefix
       - backend:
           serviceName: {{ .Release.Name }}-recording-svc
-          servicePort: {{ int .Values.recording.port }}
-        path: "/recording"
+          servicePort: 8080
+        path: "/recording/"
         pathType: Prefix
       - backend:
           serviceName: {{ .Release.Name }}-proxy-svc
-          servicePort: {{ int .Values.proxy.port }}
-        path: "/proxy"
+          servicePort: 8080
+        path: "/proxy/"
         pathType: Prefix
       - backend:
           serviceName: {{ .Release.Name }}-sockets-svc
-          servicePort: {{ int .Values.sockets.port }}
-        path: "/sockets"
+          servicePort: 8080
+        path: "/sockets/"
         pathType: Prefix

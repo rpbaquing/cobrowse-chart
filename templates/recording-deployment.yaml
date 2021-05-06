@@ -34,7 +34,7 @@ spec:
           failureThreshold: 3
           httpGet:
             path: /up
-            port: {{ int .Values.recording.port }}
+            port: 8080
             scheme: HTTP
           initialDelaySeconds: 30
           periodSeconds: 30
@@ -42,14 +42,14 @@ spec:
           timeoutSeconds: 1
         name: recording
         ports:
-        - containerPort: {{ int .Values.recording.port }}
+        - containerPort: 8080
           name: http
           protocol: TCP
         readinessProbe:
           failureThreshold: 3
           httpGet:
             path: /up
-            port: {{ int .Values.recording.port }}
+            port: 8080
             scheme: HTTP
           initialDelaySeconds: 30
           periodSeconds: 30

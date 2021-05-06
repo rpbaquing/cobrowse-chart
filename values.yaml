@@ -2,89 +2,77 @@
 
 imageCredentials:
   registry: ghcr.io
-  username: ""
+  username: cobrowse-enterprise
   password: ""
-  email: ""
 
 stage: ""
-region: ""
 domain: ""
-licenseKey: ""
-accountCreators: ""
+license: ""
 superusers: ""
-
 mongoUrl: ""
-smtpUrl: ""
 redisUrl: ""
+
+# Kubernetes Ingress configuration
 
 ingress:
   class: ""
 
+
 # API configurations
 api:
-  port: "8080" 
   image: ""
   replicas: 1
-  cpu: "256m"
-  memory: "256Mi"
+  cpu: ""
+  memory: ""
   debug: ""
 
   service:
-    type: "ClusterIP"
+    type: ""
 
 
 # Frontend configurations
 frontend:
-  port: "8080"
   image: ""
   replicas: 1
-  cpu: "256m"
-  memory: "256Mi"
+  cpu: ""
+  memory: ""
   debug: ""
 
   service:
-    type: "ClusterIP"
+    type: ""
 
 
 # Proxy configurations
 proxy:
-  port: "8080"
   image: ""
   replicas: 1
-  cpu: "256m"
-  memory: "256Mi"
+  cpu: ""
+  memory: ""
   debug: ""
 
   service: 
-    type: "ClusterIP"
+    type: ""
 
 
 # Recording configurations
 recording:
-  port: "8080"
   image: ""
   replicas: 1
-  cpu: "256m"
-  memory: "256Mi"
+  cpu: ""
+  memory: ""
   debug: ""
 
   service:
-    type: "ClusterIP"
+    type: ""
 
 
 # Sockets configurations
 sockets:
-  port: "8080"
   image: ""
   replicas: 1
-  cpu: "256m"
-  memory: "256Mi"
+  cpu: ""
+  memory: ""
   debug: ""
 
   service:
-    type: "ClusterIP"
-  
-  storage: 
-    size: "50Gi" # should be lower than NFS provisioner storage size
-    className: "nfs" 
-  mountPath: "/data/traces"
+    type: ""

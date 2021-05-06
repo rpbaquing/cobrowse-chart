@@ -6,13 +6,13 @@ is an out-of-tree cobrowse app for Kubernetes. This chart will deploy the Kubern
 ## TL;DR;
 
 ```console
-$ helm add repo cobrowse-chart https://cobrowseio.github.io/cobrowse-enterprise-helm
-$ helm install cobrowse-chart
+$ helm add repo cobrowse https://cobrowseio.github.io/cobrowse-enterprise-helm
+$ helm install cobrowse
 ```
 
 ## Introduction
 
-This chart bootstraps a [nfs-server-provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs)
+This chart bootstraps a [cobrowse](https://github.com/cobrowseio/cobrowse-enterprise-helm/tree/master)
 deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh)
 package manager.
 
@@ -21,7 +21,7 @@ package manager.
 To install the chart with the release name `cobrowse`:
 
 ```console
-$ helm install cobrowse-chart --name cobrowse
+$ helm install cobrowse --name cobrowse
 ```
 
 The command deploys cobrowse on the Kubernetes cluster in the default
@@ -109,7 +109,7 @@ Alternatively, a YAML file that specifies the values for the above parameters
 can be provided while installing the chart. For example,
 
 ```console
-$ helm install cobrowse-chart --name cobrowse -f values.yaml
+$ helm install cobrowse --name cobrowse -f values.yaml
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml) as an example

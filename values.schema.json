@@ -9,94 +9,77 @@
         {
             "imageCredentials": {
                 "registry": "ghcr.io",
-                "username": "",
-                "password": "",
-                "email": ""
+                "username": "cobrowse-enterprise",
+                "password": ""
             },
             "stage": "",
-            "region": "",
             "domain": "",
-            "licenseKey": "",
-            "accountCreators": "",
+            "license": "",
             "superusers": "",
             "mongoUrl": "",
-            "smtpUrl": "",
             "redisUrl": "",
             "ingress": {
                 "class": ""
             },
             "api": {
-                "port": "8080",
                 "image": "",
                 "replicas": 1,
-                "cpu": "256m",
-                "memory": "256Mi",
+                "cpu": "",
+                "memory": "",
                 "debug": "",
                 "service": {
-                    "type": "ClusterIP"
+                    "type": ""
                 }
             },
             "frontend": {
-                "port": "8080",
                 "image": "",
                 "replicas": 1,
-                "cpu": "256m",
-                "memory": "256Mi",
+                "cpu": "",
+                "memory": "",
                 "debug": "",
                 "service": {
-                    "type": "ClusterIP"
+                    "type": ""
                 }
             },
             "proxy": {
-                "port": "8080",
                 "image": "",
                 "replicas": 1,
-                "cpu": "256m",
-                "memory": "256Mi",
+                "cpu": "",
+                "memory": "",
                 "debug": "",
                 "service": {
-                    "type": "ClusterIP"
+                    "type": ""
                 }
             },
             "recording": {
-                "port": "8080",
                 "image": "",
                 "replicas": 1,
-                "cpu": "256m",
-                "memory": "256Mi",
+                "cpu": "",
+                "memory": "",
                 "debug": "",
                 "service": {
-                    "type": "ClusterIP"
+                    "type": ""
                 }
             },
             "sockets": {
-                "port": "8080",
                 "image": "",
                 "replicas": 1,
-                "cpu": "256m",
-                "memory": "256Mi",
+                "cpu": "",
+                "memory": "",
                 "debug": "",
                 "service": {
-                    "type": "ClusterIP"
-                },
-                "storage": {
-                    "size": "100Gi",
-                    "className": "nfs"
-                },
-                "mountPath": "/data/traces"
+                    "type": ""
+                }
             }
         }
     ],
     "required": [
         "imageCredentials",
         "stage",
-        "region",
         "domain",
-        "licenseKey",
-        "accountCreators",
+        "license",
         "superusers",
         "mongoUrl",
-        "smtpUrl",
         "redisUrl",
         "ingress",
         "api",
@@ -115,16 +98,14 @@
             "examples": [
                 {
                     "registry": "ghcr.io",
-                    "username": "",
-                    "password": "",
-                    "email": ""
+                    "username": "cobrowse-enterprise",
+                    "password": ""
                 }
             ],
             "required": [
                 "registry",
                 "username",
-                "password",
-                "email"
+                "password"
             ],
             "properties": {
                 "registry": {
@@ -144,23 +125,13 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        ""
+                        "cobrowse-enterprise"
                     ]
                 },
                 "password": {
                     "$id": "#/properties/imageCredentials/properties/password",
                     "type": "string",
                     "title": "The password schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        ""
-                    ]
-                },
-                "email": {
-                    "$id": "#/properties/imageCredentials/properties/email",
-                    "type": "string",
-                    "title": "The email schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
@@ -180,16 +151,6 @@
                 ""
             ]
         },
-        "region": {
-            "$id": "#/properties/region",
-            "type": "string",
-            "title": "The region schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                ""
-            ]
-        },
         "domain": {
             "$id": "#/properties/domain",
             "type": "string",
@@ -200,20 +161,10 @@
                 ""
             ]
         },
-        "licenseKey": {
-            "$id": "#/properties/licenseKey",
+        "license": {
+            "$id": "#/properties/license",
             "type": "string",
-            "title": "The licenseKey schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                ""
-            ]
-        },
-        "accountCreators": {
-            "$id": "#/properties/accountCreators",
-            "type": "string",
-            "title": "The accountCreators schema",
+            "title": "The license schema",
             "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
@@ -234,16 +185,6 @@
             "$id": "#/properties/mongoUrl",
             "type": "string",
             "title": "The mongoUrl schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                ""
-            ]
-        },
-        "smtpUrl": {
-            "$id": "#/properties/smtpUrl",
-            "type": "string",
-            "title": "The smtpUrl schema",
             "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
@@ -296,19 +237,17 @@
             "default": {},
             "examples": [
                 {
-                    "port": "8080",
                     "image": "",
                     "replicas": 1,
-                    "cpu": "256m",
-                    "memory": "256Mi",
+                    "cpu": "",
+                    "memory": "",
                     "debug": "",
                     "service": {
-                        "type": "ClusterIP"
+                        "type": ""
                     }
                 }
             ],
             "required": [
-                "port",
                 "image",
                 "replicas",
                 "cpu",
@@ -317,16 +256,6 @@
                 "service"
             ],
             "properties": {
-                "port": {
-                    "$id": "#/properties/api/properties/port",
-                    "type": "string",
-                    "title": "The port schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "8080"
-                    ]
-                },
                 "image": {
                     "$id": "#/properties/api/properties/image",
                     "type": "string",
@@ -354,7 +283,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256m"
+                        ""
                     ]
                 },
                 "memory": {
@@ -364,7 +293,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256Mi"
+                        ""
                     ]
                 },
                 "debug": {
@@ -385,7 +314,7 @@
                     "default": {},
                     "examples": [
                         {
-                            "type": "ClusterIP"
+                            "type": ""
                         }
                     ],
                     "required": [
@@ -399,7 +328,7 @@
                             "description": "An explanation about the purpose of this instance.",
                             "default": "",
                             "examples": [
-                                "ClusterIP"
+                                ""
                             ]
                         }
                     },
@@ -416,19 +345,17 @@
             "default": {},
             "examples": [
                 {
-                    "port": "8080",
                     "image": "",
                     "replicas": 1,
-                    "cpu": "256m",
-                    "memory": "256Mi",
+                    "cpu": "",
+                    "memory": "",
                     "debug": "",
                     "service": {
-                        "type": "ClusterIP"
+                        "type": ""
                     }
                 }
             ],
             "required": [
-                "port",
                 "image",
                 "replicas",
                 "cpu",
@@ -437,16 +364,6 @@
                 "service"
             ],
             "properties": {
-                "port": {
-                    "$id": "#/properties/frontend/properties/port",
-                    "type": "string",
-                    "title": "The port schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "8080"
-                    ]
-                },
                 "image": {
                     "$id": "#/properties/frontend/properties/image",
                     "type": "string",
@@ -474,7 +391,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256m"
+                        ""
                     ]
                 },
                 "memory": {
@@ -484,7 +401,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256Mi"
+                        ""
                     ]
                 },
                 "debug": {
@@ -505,7 +422,7 @@
                     "default": {},
                     "examples": [
                         {
-                            "type": "ClusterIP"
+                            "type": ""
                         }
                     ],
                     "required": [
@@ -519,7 +436,7 @@
                             "description": "An explanation about the purpose of this instance.",
                             "default": "",
                             "examples": [
-                                "ClusterIP"
+                                ""
                             ]
                         }
                     },
@@ -536,19 +453,17 @@
             "default": {},
             "examples": [
                 {
-                    "port": "8080",
                     "image": "",
                     "replicas": 1,
-                    "cpu": "256m",
-                    "memory": "256Mi",
+                    "cpu": "",
+                    "memory": "",
                     "debug": "",
                     "service": {
-                        "type": "ClusterIP"
+                        "type": ""
                     }
                 }
             ],
             "required": [
-                "port",
                 "image",
                 "replicas",
                 "cpu",
@@ -557,16 +472,6 @@
                 "service"
             ],
             "properties": {
-                "port": {
-                    "$id": "#/properties/proxy/properties/port",
-                    "type": "string",
-                    "title": "The port schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "8080"
-                    ]
-                },
                 "image": {
                     "$id": "#/properties/proxy/properties/image",
                     "type": "string",
@@ -594,7 +499,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256m"
+                        ""
                     ]
                 },
                 "memory": {
@@ -604,7 +509,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256Mi"
+                        ""
                     ]
                 },
                 "debug": {
@@ -625,7 +530,7 @@
                     "default": {},
                     "examples": [
                         {
-                            "type": "ClusterIP"
+                            "type": ""
                         }
                     ],
                     "required": [
@@ -639,7 +544,7 @@
                             "description": "An explanation about the purpose of this instance.",
                             "default": "",
                             "examples": [
-                                "ClusterIP"
+                                ""
                             ]
                         }
                     },
@@ -656,19 +561,17 @@
             "default": {},
             "examples": [
                 {
-                    "port": "8080",
                     "image": "",
                     "replicas": 1,
-                    "cpu": "256m",
-                    "memory": "256Mi",
+                    "cpu": "",
+                    "memory": "",
                     "debug": "",
                     "service": {
-                        "type": "ClusterIP"
+                        "type": ""
                     }
                 }
             ],
             "required": [
-                "port",
                 "image",
                 "replicas",
                 "cpu",
@@ -677,16 +580,6 @@
                 "service"
             ],
             "properties": {
-                "port": {
-                    "$id": "#/properties/recording/properties/port",
-                    "type": "string",
-                    "title": "The port schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "8080"
-                    ]
-                },
                 "image": {
                     "$id": "#/properties/recording/properties/image",
                     "type": "string",
@@ -714,7 +607,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256m"
+                        ""
                     ]
                 },
                 "memory": {
@@ -724,7 +617,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256Mi"
+                        ""
                     ]
                 },
                 "debug": {
@@ -745,7 +638,7 @@
                     "default": {},
                     "examples": [
                         {
-                            "type": "ClusterIP"
+                            "type": ""
                         }
                     ],
                     "required": [
@@ -759,7 +652,7 @@
                             "description": "An explanation about the purpose of this instance.",
                             "default": "",
                             "examples": [
-                                "ClusterIP"
+                                ""
                             ]
                         }
                     },
@@ -776,44 +669,25 @@
             "default": {},
             "examples": [
                 {
-                    "port": "8080",
                     "image": "",
                     "replicas": 1,
-                    "cpu": "256m",
-                    "memory": "256Mi",
+                    "cpu": "",
+                    "memory": "",
                     "debug": "",
                     "service": {
-                        "type": "ClusterIP"
-                    },
-                    "storage": {
-                        "size": "100Gi",
-                        "className": "nfs"
-                    },
-                    "mountPath": "/data/traces"
+                        "type": ""
+                    }
                 }
             ],
             "required": [
-                "port",
                 "image",
                 "replicas",
                 "cpu",
                 "memory",
                 "debug",
-                "service",
-                "storage",
-                "mountPath"
+                "service"
             ],
             "properties": {
-                "port": {
-                    "$id": "#/properties/sockets/properties/port",
-                    "type": "string",
-                    "title": "The port schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "8080"
-                    ]
-                },
                 "image": {
                     "$id": "#/properties/sockets/properties/image",
                     "type": "string",
@@ -841,7 +715,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256m"
+                        ""
                     ]
                 },
                 "memory": {
@@ -851,7 +725,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                        "256Mi"
+                        ""
                     ]
                 },
                 "debug": {
@@ -872,7 +746,7 @@
                     "default": {},
                     "examples": [
                         {
-                            "type": "ClusterIP"
+                            "type": ""
                         }
                     ],
                     "required": [
@@ -886,61 +760,11 @@
                             "description": "An explanation about the purpose of this instance.",
                             "default": "",
                             "examples": [
-                                "ClusterIP"
+                                ""
                             ]
                         }
                     },
                     "additionalProperties": true
-                },
-                "storage": {
-                    "$id": "#/properties/sockets/properties/storage",
-                    "type": "object",
-                    "title": "The storage schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": {},
-                    "examples": [
-                        {
-                            "size": "100Gi",
-                            "className": "nfs"
-                        }
-                    ],
-                    "required": [
-                        "size",
-                        "className"
-                    ],
-                    "properties": {
-                        "size": {
-                            "$id": "#/properties/sockets/properties/storage/properties/size",
-                            "type": "string",
-                            "title": "The size schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                "100Gi"
-                            ]
-                        },
-                        "className": {
-                            "$id": "#/properties/sockets/properties/storage/properties/className",
-                            "type": "string",
-                            "title": "The className schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                "nfs"
-                            ]
-                        }
-                    },
-                    "additionalProperties": true
-                },
-                "mountPath": {
-                    "$id": "#/properties/sockets/properties/mountPath",
-                    "type": "string",
-                    "title": "The mountPath schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "/data/traces"
-                    ]
                 }
             },
             "additionalProperties": true
