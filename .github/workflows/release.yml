@@ -21,11 +21,11 @@ jobs:
 
       - name: Helm Lint
         run: |
-          helm lint charts/**
+          helm lint
 
       - name: Helm package
         run: |
-          helm package charts/cobrowse-enterprise -d packages
+          helm package . -d packages
 
       - name: Helm repo index
         run: |
