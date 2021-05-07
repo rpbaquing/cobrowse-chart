@@ -10,6 +10,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     stage: {{ .Values.stage | quote }}
+    test: "true"
 spec:
   replicas: {{ .Values.api.replicas | default "1" }}
   selector:
