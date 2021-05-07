@@ -29,7 +29,7 @@ jobs:
 
       - name: Helm repo index
         run: |
-          helm repo index --url https://rpbaquing.github.io/cobrowse-chart/ packages
+          helm repo index --url https://rpbaquing.github.io/cobrowse-chart/ 
 
       - name: Commit files
         run: |
