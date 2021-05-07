@@ -24,9 +24,10 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.2.0
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        with:
-          charts_repo_url: https://rpbaquing.github.io/cobrowse-chart
+      - name: Run helm package
+        run: |
+          helm package charts/cobrowse-enterprise
+
+      - name: Run helm repo index
+        run: |
+          helm repo index --url https://rpbaquing.github.io/cobrowse-chart/ charts/cobrowse-enterprise
