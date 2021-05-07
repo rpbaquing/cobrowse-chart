@@ -21,7 +21,7 @@ jobs:
 
       - name: Helm Lint
         run: |
-          helm lint charts/cobrowse-enterprise/*
+          helm lint charts/**
 
       - name: Helm package
         run: |
