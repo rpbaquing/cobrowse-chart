@@ -19,13 +19,17 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Run helm package
+      - name: Helm Lint
         run: |
-          helm package charts/cobrowse-enterprise
+          helm lint charts/cobrowse-enterprise/*
 
-      - name: Run helm repo index
+      - name: Helm package
         run: |
-          helm repo index --url https://rpbaquing.github.io/cobrowse-chart/ charts/cobrowse-enterprise
+          helm package charts/cobrowse-enterprise -d packages
+
+      - name: Helm repo index
+        run: |
+          helm repo index --url https://rpbaquing.github.io/cobrowse-chart/ packages
 
       - name: Commit files
         run: |
