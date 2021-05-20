@@ -6,7 +6,7 @@ is an app packaged for Kubernetes. This chart will deploy the Kubernetes cobrows
 ## TL;DR;
 
 ```console
-$ helm add repo cobrowse-enterprise https://cobrowseio.github.io/cobrowse-enterprise-helm
+$ helm add repo cobrowse-enterprise https://cobrowseio.github.io/cobrowse-enterprise-helm/packages
 $ helm install cobrowse-enterprise
 ```
 

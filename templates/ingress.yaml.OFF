@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   labels:
@@ -27,11 +27,9 @@ metadata:
   name: api-ingress
   namespace: {{ .Release.Namespace | default "default" }}
 spec:
-  defaultBackend:
-    service:
-      name: {{ .Release.Name }}-frontend-svc
-      port:
-        number: 8080
+  backend:
+    serviceName: {{ .Release.Name }}-frontend-svc
+    servicePort: 8080
 {{- if eq .Values.ssl.generator "cert-manager" }}
   tls:
   - hosts:
@@ -43,30 +41,34 @@ spec:
     http:
       paths:
       - backend:
-          service:
-            name: {{ .Release.Name }}-api-svc
-            port:
-              number: 8080
-        path: /api
-        pathType: Prefix
+          serviceName: {{ .Release.Name }}-api-svc
+          servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
+        path: "/api/"
+{{- else }}
+        path: "/api/*"
+{{- end }}
       - backend:
-          service:
-            name: {{ .Release.Name }}-recording-svc
-            port:
-              number: 8080
-        path: /recording
-        pathType: Prefix
+          serviceName: {{ .Release.Name }}-recording-svc
+          servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
+        path: "/recording/"
+{{- else }}
+        path: "/recording/*"
+{{- end }}
       - backend:
-          service:
-            name: {{ .Release.Name }}-proxy-svc
-            port:
-              number: 8080
-        path: /proxy
-        pathType: Prefix
+          serviceName: {{ .Release.Name }}-proxy-svc
+          servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
+        path: "/proxy/"
+{{- else }}
+        path: "/proxy/*"
+{{- end }}
       - backend:
-          service:
-            name: {{ .Release.Name }}-sockets-svc
-            port:
-              number: 8080
-        path: /sockets
-        pathType: Prefix
+          serviceName: {{ .Release.Name }}-sockets-svc
+          servicePort: 8080
+{{- if eq .Values.ingress.class "nginx" }}
+        path: "/sockets/"
+{{- else }}
+        path: "/sockets/*"
+{{- end }}

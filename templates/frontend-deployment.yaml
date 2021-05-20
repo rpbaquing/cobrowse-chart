@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-frontend
-  namespace: {{ .Values.namespace | default "default" }}
+  namespace: {{ .Release.Namespace | default "default" }}
   labels:
     component: frontend
     app: {{ template "fullname" . }}
@@ -28,7 +28,7 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-frontend-envvars
-        image: ghcr.io/cobrowseio/cobrowse-frontend-enterprise:2.4.9
+        image: ghcr.io/cobrowseio/cobrowse-frontend-enterprise:2.5.8
         livenessProbe:
           failureThreshold: 3
           initialDelaySeconds: 30

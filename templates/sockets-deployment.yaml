@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-sockets
-  namespace: {{ .Values.namespace | default "default" }}
+  namespace: {{ .Release.Namespace | default "default" }}
   labels:
     component: sockets
     app: {{ template "fullname" . }}
@@ -28,7 +28,7 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-sockets-envvars
-        image: ghcr.io/cobrowseio/cobrowse-api-sockets-enterprise:1.2.1
+        image: ghcr.io/cobrowseio/cobrowse-api-sockets-enterprise:1.2.3
         livenessProbe:
           failureThreshold: 3
           httpGet:

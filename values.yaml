@@ -3,18 +3,31 @@
 imageCredentials:
   password: ""
 
-stage: ""
 domain: ""
 license: ""
 superusers: ""
-mongoUrl: ""
-redisUrl: ""
+mongo:
+  url: ""
+redis:
+  url: ""
+stage: "enterprise"
+ssl:
+  generator: ""
 
 # Kubernetes Ingress configuration
 
 ingress:
   class: ""
+  annotations: {}
 
+
+# Persistent Volume Storage
+storage:
+  type: "nfs_provisioner"
+  size: "50Gi"
+  filestore:
+    ipAddress: ""
+    fsName: ""
 
 # API configurations
 api:
@@ -44,7 +57,7 @@ proxy:
   memory: ""
   debug: ""
 
-  service: 
+  service:
     type: ""
 
 

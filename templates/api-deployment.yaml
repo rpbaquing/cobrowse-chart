@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-api
-  namespace: {{ .Values.namespace | default "default" }}
+  namespace: {{ .Release.Namespace | default "default" }}
   labels:
     component: api
     app: {{ template "fullname" . }}
@@ -10,7 +10,6 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     stage: {{ .Values.stage | quote }}
-    test: "true"
 spec:
   replicas: {{ .Values.api.replicas | default "1" }}
   selector:
@@ -29,14 +28,14 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-api-envvars
-        image: ghcr.io/cobrowseio/cobrowse-api-enterprise:1.7.35
+        image: ghcr.io/cobrowseio/cobrowse-api-enterprise:1.8.0
         livenessProbe:
           failureThreshold: 3
           httpGet:
             path: /up
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 30
+          initialDelaySeconds: 90
           periodSeconds: 30
           successThreshold: 1
           timeoutSeconds: 1
@@ -51,7 +50,7 @@ spec:
             path: /up
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 30
+          initialDelaySeconds: 90
           periodSeconds: 30
           successThreshold: 1
           timeoutSeconds: 1

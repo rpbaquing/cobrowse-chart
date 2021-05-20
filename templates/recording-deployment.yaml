@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-recording
-  namespace: {{ .Values.namespace | default "default" }}
+  namespace: {{ .Release.Namespace | default "default" }}
   annotations:
   labels:
     component: recording
@@ -29,7 +29,7 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-recording-envvars
-        image: ghcr.io/cobrowseio/cobrowse-recording-enterprise:1.0.7
+        image: ghcr.io/cobrowseio/cobrowse-recording-enterprise:1.0.8
         livenessProbe:
           failureThreshold: 3
           httpGet:

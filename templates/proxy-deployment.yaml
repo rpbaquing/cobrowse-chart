@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-proxy
-  namespace: {{ .Values.namespace | default "default" }}
+  namespace: {{ .Release.Namespace | default "default" }}
   labels:
     component: proxy
     app: {{ template "fullname" . }}
@@ -28,7 +28,7 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-proxy-envvars
-        image: ghcr.io/cobrowseio/cobrowse-proxy-enterprise:1.0.22
+        image: ghcr.io/cobrowseio/cobrowse-proxy-enterprise:1.1.7
         livenessProbe:
           failureThreshold: 3
           httpGet:
