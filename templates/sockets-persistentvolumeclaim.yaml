@@ -15,14 +15,14 @@ spec:
   resources:
     requests:
       storage: {{ .Values.storage.size | quote }}
-{{- if eq .Values. storage.type "filestore" }}
+{{- if eq .Values.storage.type "filestore" }}
   storageClassName: ""
   volumeName: fileserver
 {{- else }}
   storageClassName: "nfs"
 {{- end }}
 
-{{- if eq .Values. storage.type "filestore" }}
+{{- if eq .Values.storage.type "filestore" }}
 apiVersion: v1
 kind: PersistentVolume
 metadata:
