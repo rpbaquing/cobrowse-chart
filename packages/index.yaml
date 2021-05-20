@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   cobrowse-enterprise:
   - apiVersion: v1
-    created: "2021-05-19T16:47:22.055071+01:00"
+    created: "2021-05-20T13:41:57.369584356Z"
     description: Helm Chart for Cobrowse Enterprise
-    digest: eaacbb980787e6c548b93f8c4b81e5124c32722bcbd74759e9c34621b37e33fa
+    digest: 73ae6ed5c7a6a2e42fb5e0520a4b75c87c3cf0067be0402a50078309e6b66e31
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
     keywords:
     - cobrowse-enterprise
@@ -14,10 +14,10 @@ entries:
       name: Cobrowse.io
     name: cobrowse-enterprise
     urls:
-    - https://cobrowseio.github.io/cobrowse-enterprise-helm/packages/cobrowse-enterprise-1.5.4.tgz
+    - https://rpbaquing.github.io/cobrowse-chart/packages/cobrowse-enterprise-1.5.4.tgz
     version: 1.5.4
   - apiVersion: v1
-    created: "2021-05-19T16:47:22.05426+01:00"
+    created: "2021-05-20T13:41:57.367482706Z"
     description: Helm Chart for Cobrowse Enterprise
     digest: 68c1a3cc6ecf7d814597a1c69442ce3be75af65374bb50b05deb7f4afb336020
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
@@ -29,10 +29,10 @@ entries:
       name: Cobrowse.io
     name: cobrowse-enterprise
     urls:
-    - https://cobrowseio.github.io/cobrowse-enterprise-helm/packages/cobrowse-enterprise-1.5.3.tgz
+    - https://rpbaquing.github.io/cobrowse-chart/packages/cobrowse-enterprise-1.5.3.tgz
     version: 1.5.3
   - apiVersion: v1
-    created: "2021-05-19T16:47:22.052245+01:00"
+    created: "2021-05-20T13:41:57.366378927Z"
     description: Helm Chart for Cobrowse Enterprise
     digest: 7babfb16b5ef92bec023152a19effcf1d19bb01c9491e2416927d4cd6dc33d69
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
@@ -44,10 +44,10 @@ entries:
       name: Cobrowse.io
     name: cobrowse-enterprise
     urls:
-    - https://cobrowseio.github.io/cobrowse-enterprise-helm/packages/cobrowse-enterprise-1.5.2.tgz
+    - https://rpbaquing.github.io/cobrowse-chart/packages/cobrowse-enterprise-1.5.2.tgz
     version: 1.5.2
   - apiVersion: v1
-    created: "2021-05-19T16:47:22.050613+01:00"
+    created: "2021-05-20T13:41:57.36558057Z"
     description: Helm Chart for Cobrowse Enterprise
     digest: 1a228318662c49317c2718832d559eee79c1d73330413ac4737e2a55903c1128
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
@@ -59,10 +59,10 @@ entries:
       name: Cobrowse.io
     name: cobrowse-enterprise
     urls:
-    - https://cobrowseio.github.io/cobrowse-enterprise-helm/packages/cobrowse-enterprise-1.5.1.tgz
+    - https://rpbaquing.github.io/cobrowse-chart/packages/cobrowse-enterprise-1.5.1.tgz
     version: 1.5.1
   - apiVersion: v1
-    created: "2021-05-19T16:47:22.048342+01:00"
+    created: "2021-05-20T13:41:57.364235774Z"
     description: Helm Chart for Cobrowse Enterprise
     digest: 6d7de5d32cf789050d58c167be9b56b41c62736723abc22424ea2f9f8acf7fc8
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
@@ -74,10 +74,10 @@ entries:
       name: Cobrowse.io
     name: cobrowse-enterprise
     urls:
-    - https://cobrowseio.github.io/cobrowse-enterprise-helm/packages/cobrowse-enterprise-1.5.0.tgz
+    - https://rpbaquing.github.io/cobrowse-chart/packages/cobrowse-enterprise-1.5.0.tgz
     version: 1.5.0
   - apiVersion: v1
-    created: "2021-05-19T16:47:22.04699+01:00"
+    created: "2021-05-20T13:41:57.363255304Z"
     description: Helm Chart for Cobrowse Enterprise
     digest: 223f5149c222214b7d661b716d4cb0eda921aefff09a3f7648f2c08096a96b50
     home: https://github.com/cobrowseio/cobrowse-enterprise-helm
@@ -89,6 +89,22 @@ entries:
       name: Cobrowse.io
     name: cobrowse-enterprise
     urls:
-    - https://cobrowseio.github.io/cobrowse-enterprise-helm/packages/cobrowse-enterprise-1.0.0.tgz
+    - https://rpbaquing.github.io/cobrowse-chart/packages/cobrowse-enterprise-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-19T16:47:22.044962+01:00"
+  - apiVersion: v1
+    appVersion: v1.4.3
+    created: "2021-05-20T13:41:57.370828445Z"
+    description: Chart for the Cobrowse Platform
+    digest: 503bbd5cd8c88a06dd3e02d3260b52e312df08aa2a9dbdc8e677046a21435eb3
+    home: https://github.com/cobrowseio/cobrowse-enterprise-helm
+    keywords:
+    - cobrowse-enterprise
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: hello@cobrowse.io
+      name: Cobrowse.io
+    name: cobrowse-enterprise
+    urls:
+    - https://rpbaquing.github.io/cobrowse-chart/packages/cobrowse-enterprise-v1.0.0.tgz
+    version: v1.0.0
+generated: "2021-05-20T13:41:57.362224531Z"
