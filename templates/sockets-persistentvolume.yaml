@@ -1,7 +1,8 @@
+{{- if eq .Values.storage.type "filestore" }}
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 metadata:
-  name: {{ .Release.Name }}-sockets-pvc
+  name: {{ .Release.Name }}-sockets-pv
   namespace: {{ .Release.Namespace | default "default" }}
   labels:
     app: {{ template "fullname" . }}
@@ -10,14 +11,11 @@ metadata:
     heritage: {{ .Release.Service }}
     stage: {{ .Values.stage | quote }}
 spec:
+  capacity:
+    storage: {{ .Values.storage.size | quote }}
   accessModes:
   - ReadWriteMany
-  resources:
-    requests:
-      storage: {{ .Values.storage.size | quote }}
-{{- if eq .Values.storage.type "filestore" }}
-  storageClassName: ""
-  volumeName: {{ .Release.Name }}-sockets-pv
-{{- else }}
-  storageClassName: "nfs"
+  nfs:
+    path: /{{ .Values.storage.filestore.fsName | quote }}
+    server: {{ .Values.storage.filestore.ipAddress | quote }}
 {{- end }}
