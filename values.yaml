@@ -15,19 +15,23 @@ ssl:
   generator: ""
 
 # Kubernetes Ingress configuration
-
 ingress:
   class: ""
   annotations: {}
 
-
 # Persistent Volume Storage
 storage:
-  type: "nfs_provisioner"
   size: "50Gi"
-  filestore:
-    ipAddress: ""
-    fsName: ""
+  type: "" # See available types below and required configs
+  
+  ## NFS Provisioner
+  #type: "nfs_provisioner"
+  
+  ## GCP Filestore
+  #type: "filestore"
+  #filestore:
+  #  ipAddress: ""
+  #  fsName: ""
 
 # API configurations
 api:

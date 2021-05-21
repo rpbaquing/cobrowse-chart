@@ -28,12 +28,8 @@
                 "annotations": {}
             },
             "storage": {
-                "type": "nfs_provisioner",
                 "size": "50Gi",
-                "filestore": {
-                    "ipAddress": "",
-                    "fsName": ""
-                }
+                "type": ""
             },
             "api": {
                 "replicas": 1,
@@ -301,30 +297,15 @@
             "default": {},
             "examples": [
                 {
-                    "type": "nfs_provisioner",
                     "size": "50Gi",
-                    "filestore": {
-                        "ipAddress": "",
-                        "fsName": ""
-                    }
+                    "type": ""
                 }
             ],
             "required": [
-                "type",
                 "size",
-                "filestore"
+                "type"
             ],
             "properties": {
-                "type": {
-                    "$id": "#/properties/storage/properties/type",
-                    "type": "string",
-                    "title": "The type schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "nfs_provisioner"
-                    ]
-                },
                 "size": {
                     "$id": "#/properties/storage/properties/size",
                     "type": "string",
@@ -335,45 +316,15 @@
                         "50Gi"
                     ]
                 },
-                "filestore": {
-                    "$id": "#/properties/storage/properties/filestore",
-                    "type": "object",
-                    "title": "The filestore schema",
+                "type": {
+                    "$id": "#/properties/storage/properties/type",
+                    "type": "string",
+                    "title": "The type schema",
                     "description": "An explanation about the purpose of this instance.",
-                    "default": {},
+                    "default": "",
                     "examples": [
-                        {
-                            "ipAddress": "",
-                            "fsName": ""
-                        }
-                    ],
-                    "required": [
-                        "ipAddress",
-                        "fsName"
-                    ],
-                    "properties": {
-                        "ipAddress": {
-                            "$id": "#/properties/storage/properties/filestore/properties/ipAddress",
-                            "type": "string",
-                            "title": "The ipAddress schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                ""
-                            ]
-                        },
-                        "fsName": {
-                            "$id": "#/properties/storage/properties/filestore/properties/fsName",
-                            "type": "string",
-                            "title": "The fsName schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                ""
-                            ]
-                        }
-                    },
-                    "additionalProperties": true
+                        ""
+                    ]
                 }
             },
             "additionalProperties": true
