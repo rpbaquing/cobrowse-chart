@@ -16,6 +16,6 @@ spec:
   accessModes:
   - ReadWriteMany
   nfs:
-    path: /{{ .Values.storage.filestore.fsName | quote }}
-    server: {{ .Values.storage.filestore.ipAddress | quote }}
+    path: /{{ .Values.storage.filestore.fsName }}
+    server: {{ .Values.storage.filestore.ipAddress }}
 {{- end }}
