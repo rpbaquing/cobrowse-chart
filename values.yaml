@@ -33,6 +33,9 @@ storage:
   #  ipAddress: ""
   #  fsName: ""
 
+  ## Azure Fileshare
+  #type: "fileshare"
+
 # API configurations
 api:
   replicas: 1

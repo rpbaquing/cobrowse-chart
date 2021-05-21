@@ -12,7 +12,7 @@ metadata:
     stage: {{ .Values.stage | quote }}
 spec:
   capacity:
-    storage: {{ .Values.storage.size | quote }}
+    storage: {{ .Values.storage.size }}
   accessModes:
   - ReadWriteMany
   nfs:
