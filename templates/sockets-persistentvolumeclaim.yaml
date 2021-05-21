@@ -15,9 +15,9 @@ spec:
   resources:
     requests:
       storage: {{ .Values.storage.size | quote }}
-{{- if ne .Values.storage.type "external" }}
-  storageClassName: "nfs"
-{{- else }}
+{{- if eq .Values.storage.type "external" }}
   storageClassName: ""
   volumeName: {{ .Release.Name }}-sockets-pv
+{{- else }}
+  storageClassName: "nfs"
 {{- end }}
