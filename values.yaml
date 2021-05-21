@@ -22,19 +22,17 @@ ingress:
 # Persistent Volume Storage
 storage:
   size: "50Gi"
-  type: "" # See available types below and required configs
+  type: "" # See available types below and required configurations
+  hostname: ""
+  filesharename: ""
   
-  ## NFS Provisioner
-  #type: "nfs_provisioner"
+  # When NFS Server Provisioner is deployed inside the Kubernetes cluster
+  # type: internal
   
-  ## GCP Filestore
-  #type: "filestore"
-  #filestore:
-  #  ipAddress: ""
-  #  fsName: ""
-
-  ## Azure Fileshare
-  #type: "fileshare"
+  # When using external NFS outside cluster such as Azure Fileshare, GCP Filestore, On-prem NFS Server
+  # type: external
+  # hostname: ""
+  # filesharename: ""
 
 # API configurations
 api:

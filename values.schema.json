@@ -29,7 +29,9 @@
             },
             "storage": {
                 "size": "50Gi",
-                "type": ""
+                "type": "",
+                "hostname": "",
+                "filesharename": ""
             },
             "api": {
                 "replicas": 1,
@@ -298,12 +300,16 @@
             "examples": [
                 {
                     "size": "50Gi",
-                    "type": ""
+                    "type": "",
+                    "hostname": "",
+                    "filesharename": ""
                 }
             ],
             "required": [
                 "size",
-                "type"
+                "type",
+                "hostname",
+                "filesharename"
             ],
             "properties": {
                 "size": {
@@ -320,6 +326,26 @@
                     "$id": "#/properties/storage/properties/type",
                     "type": "string",
                     "title": "The type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "hostname": {
+                    "$id": "#/properties/storage/properties/hostname",
+                    "type": "string",
+                    "title": "The hostname schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "filesharename": {
+                    "$id": "#/properties/storage/properties/filesharename",
+                    "type": "string",
+                    "title": "The filesharename schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [

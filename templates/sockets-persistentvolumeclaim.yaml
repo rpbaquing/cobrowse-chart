@@ -15,11 +15,9 @@ spec:
   resources:
     requests:
       storage: {{ .Values.storage.size | quote }}
-{{- if eq .Values.storage.type "filestore" }}
+{{- if eq .Values.storage.type "internal" }}
+  storageClassName: "nfs"
+{{- else }}
   storageClassName: ""
   volumeName: {{ .Release.Name }}-sockets-pv
-{{- else if eq .Values.storage.type "fileshare" }}
-  storageClassName: {{ .Release.Name }}-azurefile
-{{- else }}
-  storageClassName: "nfs"
 {{- end }}
