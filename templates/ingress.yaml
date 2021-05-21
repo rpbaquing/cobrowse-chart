@@ -42,6 +42,7 @@ spec:
   - host: {{ .Values.domain }}
     http:
       paths:
+{{- if eq .Values.ingress.class "nginx" }}
       - backend:
           service:
             name: {{ .Release.Name }}-api-svc
@@ -51,13 +52,6 @@ spec:
         pathType: Prefix
       - backend:
           service:
-            name: {{ .Release.Name }}-api-svc
-            port:
-              number: 8080
-        path: /api/*
-        pathType: ImplementationSpecific
-      - backend:
-          service:
             name: {{ .Release.Name }}-recording-svc
             port:
               number: 8080
@@ -65,18 +59,32 @@ spec:
         pathType: Prefix
       - backend:
           service:
-            name: {{ .Release.Name }}-recording-svc
-            port:
-              number: 8080
-        path: /recording/*
-        pathType: ImplementationSpecific
-      - backend:
-          service:
             name: {{ .Release.Name }}-proxy-svc
             port:
               number: 8080
         path: /proxy
         pathType: Prefix
+      - backend:
+          service:
+            name: {{ .Release.Name }}-sockets-svc
+            port:
+              number: 8080
+        path: /sockets
+        pathType: Prefix
+{{- else }}
+      - backend:
+          service:
+            name: {{ .Release.Name }}-api-svc
+            port:
+              number: 8080
+        path: /api/*
+        pathType: ImplementationSpecific- backend:
+          service:
+            name: {{ .Release.Name }}-recording-svc
+            port:
+              number: 8080
+        path: /recording/*
+        pathType: ImplementationSpecific
       - backend:
           service:
             name: {{ .Release.Name }}-proxy-svc
@@ -89,12 +97,6 @@ spec:
             name: {{ .Release.Name }}-sockets-svc
             port:
               number: 8080
-        path: /sockets
-        pathType: Prefix
-      - backend:
-          service:
-            name: {{ .Release.Name }}-sockets-svc
-            port:
-              number: 8080
         path: /sockets/*
         pathType: ImplementationSpecific
+{{- end }}
