@@ -18,7 +18,7 @@ spec:
 {{- if eq .Values.storage.type "filestore" }}
   storageClassName: ""
   volumeName: {{ .Release.Name }}-sockets-pv
-{{- if eq .Values.storage.type "fileshare" }}
+{{- else if eq .Values.storage.type "fileshare" }}
   storageClassName: {{ .Release.Name }}-azurefile
 {{- else }}
   storageClassName: "nfs"
