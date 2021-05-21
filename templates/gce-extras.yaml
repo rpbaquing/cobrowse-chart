@@ -40,7 +40,7 @@ metadata:
     heritage: {{ .Release.Service }}
     stage: {{ .Values.stage | quote }}
 spec:
-  sslPolicy: ssl-policy-{{ .Values.stage | quote }}
+  sslPolicy: ssl-policy-{{ .Values.stage }}
   redirectToHttps:
     enabled: true
     responseCodeName: MOVED_PERMANENTLY_DEFAULT
