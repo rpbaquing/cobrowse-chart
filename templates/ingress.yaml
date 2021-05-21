@@ -78,7 +78,8 @@ spec:
             port:
               number: 8080
         path: /api/*
-        pathType: ImplementationSpecific- backend:
+        pathType: ImplementationSpecific
+      - backend:
           service:
             name: {{ .Release.Name }}-recording-svc
             port:
