@@ -2,8 +2,6 @@ name: Release Cobrowse Enterprise helm chart
 
 on:
   push:
-    tags:
-      - '**'
 
 jobs:
   release:
