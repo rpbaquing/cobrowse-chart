@@ -24,6 +24,7 @@ spec:
         component: sockets
         stage: {{ .Values.stage | quote }}
     spec:
+{{- if .Values.storage.server }}
       initContainers:
       - name: update-data-ownership
         image: alpine
@@ -31,6 +32,7 @@ spec:
         volumeMounts:
         - mountPath: "/data/traces"
           name: data-traces
+{{- end }}
       containers:
       - envFrom:
         - secretRef:
