@@ -66,6 +66,8 @@ spec:
           name: data-traces
       imagePullSecrets:
       - name: {{ .Release.Name }}-docker-cfg
+      securityContext:
+        fsGroup: 2000
       volumes:
       - name: data-traces
         persistentVolumeClaim:
