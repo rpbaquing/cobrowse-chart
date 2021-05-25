@@ -27,13 +27,9 @@ spec:
       initContainers:
       - name: update-data-ownership
         image: alpine
-        command:
-        - chmod
-        - -R
-        - 777
-        - /data/traces
+        command: [ "chmod", "-R", "777", "/data/traces" ]
         volumeMounts:
-        - mountPath: /data/traces
+        - mountPath: "/data/traces"
           name: data-traces
       containers:
       - envFrom:
