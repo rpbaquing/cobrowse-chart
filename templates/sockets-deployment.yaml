@@ -24,6 +24,10 @@ spec:
         component: sockets
         stage: {{ .Values.stage | quote }}
     spec:
+      securityContext:
+        runAsUser: 1099
+        runAsGroup: 1099
+        fsGroup: 1099
       containers:
       - envFrom:
         - secretRef:
@@ -66,9 +70,6 @@ spec:
           name: data-traces
       imagePullSecrets:
       - name: {{ .Release.Name }}-docker-cfg
-      securityContext:
-        privileged: true
-  
       volumes:
       - name: data-traces
         persistentVolumeClaim:
