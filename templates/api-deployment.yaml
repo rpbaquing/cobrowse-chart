@@ -12,6 +12,12 @@ metadata:
     stage: {{ .Values.stage | quote }}
 spec:
   replicas: {{ .Values.api.replicas | default "1" }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 0
+  minReadySeconds: 30
   selector:
     matchLabels:
       component: api
@@ -28,7 +34,7 @@ spec:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-api-envvars
-        image: ghcr.io/cobrowseio/cobrowse-api-enterprise:1.8.0
+        image: ghcr.io/cobrowseio/cobrowse-api-enterprise:1.12.1
         livenessProbe:
           failureThreshold: 3
           httpGet:

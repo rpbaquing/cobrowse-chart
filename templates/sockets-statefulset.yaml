@@ -25,11 +25,20 @@ spec:
         component: sockets
         stage: {{ .Values.stage | quote }}
     spec:
+{{- if .Values.storage.server }}
+      initContainers:
+      - name: update-data-ownership
+        image: alpine
+        command: [ "chmod", "-R", "777", "/data" ]
+        volumeMounts:
+        - mountPath: "/data"
+          name: data-traces
+{{- end }}
       containers:
       - envFrom:
         - secretRef:
             name: {{ .Release.Name }}-sockets-envvars
-        image: ghcr.io/cobrowseio/cobrowse-api-sockets-enterprise:1.2.3
+        image: ghcr.io/cobrowseio/cobrowse-api-sockets-enterprise:1.2.11
         livenessProbe:
           failureThreshold: 3
           httpGet:
@@ -55,7 +64,7 @@ spec:
           successThreshold: 1
           timeoutSeconds: 1
         volumeMounts:
-        - mountPath: "/data/traces"
+        - mountPath: "/data"
           name: data-traces
         resources:
           limits:

@@ -16,6 +16,6 @@ spec:
   accessModes:
   - ReadWriteMany
   nfs:
-    path: /{{ .Values.storage.path }}
+    path: {{ .Values.storage.path }}
     server: {{ .Values.storage.server }}
 {{- end }}
